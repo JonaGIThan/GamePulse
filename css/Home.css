@@ -1,0 +1,266 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Exo', sans-serif;
+}
+
+h1{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+body {
+    background-color: #191818;
+    color:  #C81F62;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes the full height */
+}
+
+/* Navbar Styles */
+.header {
+    background-color: #121212;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Distribute content to both sides */
+    align-items: center; /* Vertically align the items */
+}
+
+.header-title {
+    color: #C81F62;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: left;
+}
+
+.header-nav {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.header-link {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.header-link:hover {
+    color: #C81F62;
+}
+
+.header-right {
+    display: flex;
+    gap: 20px; /* Space between the search bar and profile icon */
+    align-items: center;
+}
+
+.search-bar {
+    padding: 8px 12px;
+    border: 2px solid #C81F62; /* Border color to match the theme */
+    border-radius: 25px;
+    background-color: #1f1f1f;
+    color: white;
+    width: 200px;
+    font-size: 1rem;
+    transition: width 0.3s ease;
+}
+
+.search-bar:focus {
+    width: 250px; /* Slightly expand the search bar on focus */
+    outline: none;
+    border-color: #f0c674; /* Focus border color */
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 3px;
+    transition: transform 0.3s;
+}
+
+.profile-icon:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+
+/* Trending Section */
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    padding: 16px;
+    grid-template-rows: repeat(auto-fill, 1fr); /* Add this to define the rows */
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Make the first image container bigger both horizontally and vertically */
+.image-wrapper:first-child {
+    grid-column: span 2; /* Make the first item span 2 columns */
+    grid-row: span 2; /* Make the first item span 2 rows */
+}
+
+/* Image styles */
+.trending-image,
+.trending-image1 {
+    width: 100%;
+    height: 100%; /* Ensure the image fills the container's height */
+    object-fit: cover; /* Maintain aspect ratio, cropping if necessary */
+    display: block; /* Prevent inline gaps */
+}
+
+/* Title styles */
+.image-title,
+.image-title1 {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(30, 28, 28, 0.6);
+    color: white;
+    padding: 4px 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-align: center;
+    white-space: normal; /* Allow text to wrap */
+    max-width: 90%; /* Ensure the title does not exceed the container width */
+    overflow: hidden; /* Hide overflow text if needed */
+    word-wrap: break-word; /* Ensure long words break properly */
+}
+
+
+
+h1.trending, h1.latest {
+    color: #C81F62; /* Red color for h1 */
+}
+
+/* Latest Section */
+.latest {
+    padding: 16px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Push text and image to opposite ends */
+    padding: 0; /* Remove padding to allow image to touch edges */
+    margin-bottom: 16px; /* Space between list items */
+    border-radius: 8px; /* Optional: Rounded corners */
+    background-color: #2E2929; /* Light background color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.link {
+    display: flex; /* Ensure the <a> behaves like a block-level element */
+    align-items: center; /* Centers content vertically */
+    justify-content: space-between; /* Maintains spacing between text and image */
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Ensures text color is inherited from parent */
+    width: 100%; /* Ensures the <a> takes up the full width of the .item */
+}
+
+.text-container {
+    flex: 1; /* Makes the text container take up available space */
+    margin-right: 16px; /* Adds space between text and image */
+    margin-left: 16px;
+}
+
+.title {
+    display: block; /* Ensure title takes its own line */
+    font-size: 25px; /* Larger font for title */
+    font-weight: bold; /* Bold title */
+    color: #FFFFFF; /* Darker text color */
+    margin-bottom: 8px; /* Space between title and author */
+}
+
+.author {
+    display: block; /* Ensure author takes its own line */
+    font-size: 18px; /* Smaller font for author */
+    color: #FFFFFF; /* Gray color for author */
+}
+
+.image {
+    width: 250px; /* Fixed width for images */
+    height: 150px; /* Fixed height for images */
+    border-radius: 8px; /* Optional: Rounded corners */
+    margin-left: 0; /* Remove left margin to allow image to touch the left edge */
+    margin-right: 0; /* Remove right margin to allow image to touch the right edge */
+    object-fit: cover; /* Ensure image covers the specified area without distortion */
+}
+
+
+button {
+    padding: 8px 16px;
+    color: white;
+    background-color: #C81F62;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block; /* Change to block to make only the button clickable */
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+/* Bottom Bar Styles */
+.bottom-list {
+    display: flex; /* Use flexbox to align items */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Center items vertically */
+    gap: 16px; /* Add space between items */
+    padding: 16px; /* Add padding around the list for spacing */
+    margin: 0; /* Remove all margins */
+    list-style: none; /* Remove bullets from the list */
+    background-color: #121212; /* Add a background color */
+    bottom: 0; /* Align to the bottom of the viewport */
+    width: 100%; /* Ensure it spans the full width */
+}
+
+.bottom-link {
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Adjust font size */
+    font-family: 'Exo', sans-serif; /* Use the desired font */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth hover effect */
+}
+
+.bottom-link:hover {
+    color: #C81F62; /* Optional: Change color on hover */
+}
+
+
+.Logo {
+    width: 40px; /* Set the logo size */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Make it clickable */
+}

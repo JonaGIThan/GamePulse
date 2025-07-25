@@ -1,0 +1,203 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Exo', sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin-top: 20px;
+}
+
+body {
+    background-color: #191818;
+    color:  #C81F62;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes the full height */
+}
+
+/* Navbar Styles */
+.header {
+    background-color: #121212;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Distribute content to both sides */
+    align-items: center; /* Vertically align the items */
+}
+
+.header-title {
+    color: #C81F62;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: left;
+}
+
+.header-nav {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.header-link {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.header-link:hover {
+    color: #C81F62;
+}
+
+.header-right {
+    display: flex;
+    gap: 20px; /* Space between the search bar and profile icon */
+    align-items: center;
+}
+
+.search-bar {
+    padding: 8px 12px;
+    border: 2px solid #C81F62; /* Border color to match the theme */
+    border-radius: 25px;
+    background-color: #1f1f1f;
+    color: white;
+    width: 200px;
+    font-size: 1rem;
+    transition: width 0.3s ease;
+}
+
+.search-bar:focus {
+    width: 250px; /* Slightly expand the search bar on focus */
+    outline: none;
+    border-color: #f0c674; /* Focus border color */
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 3px;
+    transition: transform 0.3s;
+}
+
+.profile-icon:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Trending Section */
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 24px; /* Increase spacing between grid items */
+    padding: 24px; /* Add padding around the grid */
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Consistent height for images */
+    border-radius: 8px; /* Optional: rounded corners for a softer look */
+    overflow: hidden; /* Ensure images don't overflow their container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for better separation */
+}
+
+/* Remove special styling for the first image container */
+.image-wrapper:first-child {
+    grid-column: auto;
+    grid-row: auto;
+}
+
+/* Image styles */
+.trending-image,
+.trending-image1 {
+    width: 100%;
+    height: 100%; /* Ensure the image fills the container */
+    object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+    display: block; /* Prevent inline gaps */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Add hover effects */
+}
+
+/* Hover effect for images */
+.image-wrapper:hover .trending-image,
+.image-wrapper:hover .trending-image1 {
+    transform: scale(1.05); /* Slight zoom on hover */
+    opacity: 0.9; /* Dim the image slightly on hover */
+}
+
+/* Title styles */
+.image-title,
+.image-title1 {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(30, 28, 28, 0.6);
+    color: white;
+    padding: 6px 12px; /* Adjust padding for better readability */
+    font-size: 14px;
+    border-radius: 4px;
+    text-align: center;
+    white-space: normal; /* Allow text to wrap */
+    max-width: 90%; /* Ensure the title does not exceed the container width */
+    overflow: hidden; /* Hide overflow text */
+    word-wrap: break-word; /* Break long words */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Enhance text visibility */
+}
+
+
+
+/* Bottom Bar Styles */
+.bottom-list {
+    display: flex; /* Use flexbox to align items */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Center items vertically */
+    gap: 16px; /* Add space between items */
+    padding: 16px; /* Add padding around the list for spacing */
+    margin: 0; /* Remove all margins */
+    list-style: none; /* Remove bullets from the list */
+    background-color: #121212; /* Add a background color */
+    bottom: 0; /* Align to the bottom of the viewport */
+    width: 100%; /* Ensure it spans the full width */
+}
+
+.bottom-link {
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Adjust font size */
+    font-family: 'Exo', sans-serif; /* Use the desired font */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth hover effect */
+}
+
+.bottom-link:hover {
+    color: #C81F62; /* Optional: Change color on hover */
+}
+
+
+.Logo {
+    width: 40px; /* Set the logo size */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Make it clickable */
+}
